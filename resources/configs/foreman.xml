@@ -1,0 +1,418 @@
+
+<!--<configuration salt="something"-->
+    <!--jdbcurl="jdbc:postgresql://localhost/foreman" userid="foreman" password="foreman">-->
+    <!--&lt;!&ndash;<anonymizerclass>org.sf.anonimatron.CommunityAnonymizer</anonymizerclass>&ndash;&gt;-->
+    <!--<anonymizerclass>nz.billryder.anonimatron.anonymizer.DomainAnonymizer</anonymizerclass>-->
+
+    <!--<table name="architectures">-->
+        <!--<column name="name" size="-1"/>-->
+    <!--</table>-->
+    <!--<table name="domains">-->
+            <!--<column name="name" type="DOMAIN" size="-1" />-->
+            <!--<column name="fullname" type="DOMAIN" size="-1" />-->
+
+    <!--</table>-->
+
+<!--</configuration>-->
+
+
+<configuration salt="somethingsalty"
+    jdbcurl="jdbc:postgresql://localhost/foreman" userid="foreman" password="foreman">
+    <anonymizerclass>nz.billryder.anonimatron.anonymizer.DomainAnonymizer</anonymizerclass>
+
+    <!-- the following do not work with anonimatron 1.9.3  -->
+    <!--<table name="nics">-->
+        <!--<column name="mac" type="STRING" size="-1"/>-->
+        <!--<column name="ip" type="STRING" size="-1"/>-->
+        <!--<column name="type" type="STRING" size="-1"/>-->
+        <!--<column name="name" type="STRING" size="-1"/>-->
+        <!--<column name="attrs" type="STRING" size="-1"/>-->
+        <!--<column name="provider" type="STRING" size="-1"/>-->
+        <!--<column name="username" type="STRING" size="-1"/>-->
+        <!--<column name="password" type="STRING" size="-1"/>-->
+        <!--<column name="identifier" type="STRING" size="-1"/>-->
+        <!--<column name="tag" type="STRING" size="-1"/>-->
+        <!--<column name="attached_to" type="STRING" size="-1"/>-->
+        <!--<column name="mode" type="STRING" size="-1"/>-->
+        <!--<column name="attached_devices" type="STRING" size="-1"/>-->
+        <!--<column name="bond_options" type="STRING" size="-1"/>-->
+        <!--<column name="compute_attributes" type="STRING" size="-1"/>-->
+        <!--<column name="ip6" type="STRING" size="-1"/>-->
+    <!--</table>-->
+
+    <!--<table name="notification_blueprints">-->
+        <!--<column name="group" type="STRING" size="-1"/>-->
+        <!--<column name="level" type="STRING" size="-1"/>-->
+        <!--<column name="message" type="STRING" size="-1"/>-->
+        <!--<column name="name" type="STRING" size="-1"/>-->
+        <!--<column name="actions" type="STRING" size="-1"/>-->
+    <!--</table>-->
+        <!--<table name="dynflow_delayed_plans">-->
+        <!--<column name="data" type="STRING" size="-1"/>-->
+        <!--<column name="args_serializer" type="STRING" size="-1"/>-->
+        <!--<column name="serialized_args" type="STRING" size="-1"/>-->
+    <!--</table>-->
+        <!--<table name="settings">-->
+        <!--<column name="name" type="STRING" size="-1"/>-->
+        <!--<column name="value" type="STRING" size="-1"/>-->
+        <!--<column name="description" type="STRING" size="-1"/>-->
+        <!--<column name="category" type="STRING" size="-1"/>-->
+        <!--<column name="settings_type" type="STRING" size="-1"/>-->
+        <!--<column name="default" type="STRING" size="-1"/>-->
+        <!--<column name="full_name" type="STRING" size="-1"/>-->
+    <!--</table>-->
+    <!--<table name="subnets">-->
+        <!--<column name="network" type="STRING" size="-1"/>-->
+        <!--<column name="mask" type="STRING" size="-1"/>-->
+        <!--<column name="name" type="STRING" size="-1"/>-->
+        <!--<column name="vlanid" type="STRING" size="-1"/>-->
+        <!--<column name="gateway" type="STRING" size="-1"/>-->
+        <!--<column name="dns_primary" type="STRING" size="-1"/>-->
+        <!--<column name="dns_secondary" type="STRING" size="-1"/>-->
+        <!--<column name="from" type="STRING" size="-1"/>-->
+        <!--<column name="to" type="STRING" size="-1"/>-->
+        <!--<column name="boot_mode" type="STRING" size="-1"/>-->
+        <!--<column name="ipam" type="STRING" size="-1"/>-->
+        <!--<column name="type" type="STRING" size="-1"/>-->
+    <!--</table>  -->
+    <!--<table name="operatingsystems">-->
+        <!--<column name="major" type="STRING" size="-1"/>-->
+        <!--<column name="name" type="STRING" size="-1"/>-->
+        <!--<column name="minor" type="STRING" size="-1"/>-->
+        <!--<column name="nameindicator" type="STRING" size="-1"/>-->
+        <!--<column name="release_name" type="STRING" size="-1"/>-->
+        <!--<column name="type" type="STRING" size="-1"/>-->
+        <!--<column name="description" type="STRING" size="-1"/>-->
+        <!--<column name="password_hash" type="STRING" size="-1"/>-->
+        <!--<column name="title" type="STRING" size="-1"/>-->
+    <!--</table>    -->
+    <!-- the above do not work with anonimatron 1.9.3  -->
+
+    <table name="ar_internal_metadata">
+        <column name="value" type="STRING" size="-1"/>
+    </table>
+    <table name="architectures">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="audits">
+        <column name="auditable_type" type="STRING" size="-1"/>
+        <column name="user_type" type="STRING" size="-1"/>
+        <column name="username" type="STRING" size="-1"/>
+        <column name="action" type="STRING" size="-1"/>
+        <column name="audited_changes" type="STRING" size="-1"/>
+        <column name="comment" type="STRING" size="-1"/>
+        <column name="associated_type" type="STRING" size="-1"/>
+        <column name="request_uuid" type="STRING" size="-1"/>
+        <column name="remote_address" type="STRING" size="-1"/>
+        <column name="auditable_name" type="STRING" size="-1"/>
+        <column name="associated_name" type="STRING" size="-1"/>
+    </table>
+    <table name="auth_sources">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="host" type="STRING" size="-1"/>
+        <column name="account" type="STRING" size="-1"/>
+        <column name="account_password" type="STRING" size="-1"/>
+        <column name="base_dn" type="STRING" size="-1"/>
+        <column name="attr_login" type="STRING" size="-1"/>
+        <column name="attr_firstname" type="STRING" size="-1"/>
+        <column name="attr_lastname" type="STRING" size="-1"/>
+        <column name="attr_mail" type="EMAIL_ADDRESS" size="-1"/>
+        <column name="ldap_filter" type="STRING" size="-1"/>
+        <column name="attr_photo" type="STRING" size="-1"/>
+        <column name="server_type" type="STRING" size="-1"/>
+        <column name="groups_base" type="STRING" size="-1"/>
+    </table>
+    <table name="bookmarks">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="query" type="STRING" size="-1"/>
+        <column name="controller" type="STRING" size="-1"/>
+        <column name="owner_type" type="STRING" size="-1"/>
+    </table>
+    <table name="compute_attributes">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="vm_attrs" type="STRING" size="-1"/>
+    </table>
+    <table name="compute_profiles">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="compute_resources">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+        <column name="url" type="STRING" size="-1"/>
+        <column name="user" type="STRING" size="-1"/>
+        <column name="password" type="STRING" size="-1"/>
+        <column name="uuid" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+        <column name="attrs" type="STRING" size="-1"/>
+    </table>
+    <table name="config_groups">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="domains">
+        <column name="name" type="DOMAIN" size="-1"/>
+        <column name="fullname" type="DOMAIN" size="-1"/>
+    </table>
+    <table name="dynflow_actions">
+        <column name="data" type="STRING" size="-1"/>
+        <column name="class" type="STRING" size="-1"/>
+        <column name="input" type="STRING" size="-1"/>
+        <column name="output" type="STRING" size="-1"/>
+    </table>
+    <table name="dynflow_coordinator_records">
+        <column name="owner_id" type="STRING" size="-1"/>
+        <column name="data" type="STRING" size="-1"/>
+    </table>
+    <table name="dynflow_envelopes">
+        <column name="data" type="STRING" size="-1"/>
+    </table>
+    <table name="dynflow_execution_plans">
+        <column name="data" type="STRING" size="-1"/>
+        <column name="state" type="STRING" size="-1"/>
+        <column name="result" type="STRING" size="-1"/>
+        <column name="label" type="STRING" size="-1"/>
+        <column name="class" type="STRING" size="-1"/>
+        <column name="run_flow" type="STRING" size="-1"/>
+        <column name="finalize_flow" type="STRING" size="-1"/>
+        <column name="execution_history" type="STRING" size="-1"/>
+        <column name="step_ids" type="STRING" size="-1"/>
+    </table>
+    <table name="dynflow_steps">
+        <column name="data" type="STRING" size="-1"/>
+        <column name="state" type="STRING" size="-1"/>
+        <column name="class" type="STRING" size="-1"/>
+        <column name="error" type="STRING" size="-1"/>
+        <column name="action_class" type="STRING" size="-1"/>
+        <column name="children" type="STRING" size="-1"/>
+    </table>
+    <table name="environments">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="external_usergroups">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="fact_names">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="short_name" type="STRING" size="-1"/>
+        <column name="ancestry" type="STRING" size="-1"/>
+    </table>
+    <table name="fact_values">
+        <column name="value" type="STRING" size="-1"/>
+    </table>
+    <table name="features">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="filters">
+        <column name="search" type="STRING" size="-1"/>
+        <column name="taxonomy_search" type="STRING" size="-1"/>
+    </table>
+    <table name="host_config_groups">
+        <column name="host_type" type="STRING" size="-1"/>
+    </table>
+    <table name="host_status">
+        <column name="type" type="STRING" size="-1"/>
+    </table>
+    <table name="hostgroups">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="root_pass" type="STRING" size="-1"/>
+        <column name="image_file" type="STRING" size="-1"/>
+        <column name="ancestry" type="STRING" size="-1"/>
+        <column name="vm_defaults" type="STRING" size="-1"/>
+        <column name="title" type="STRING" size="-1"/>
+        <column name="grub_pass" type="STRING" size="-1"/>
+        <column name="lookup_value_matcher" type="STRING" size="-1"/>
+        <column name="pxe_loader" type="STRING" size="-1"/>
+    </table>
+    <table name="hosts">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="root_pass" type="STRING" size="-1"/>
+        <column name="comment" type="STRING" size="-1"/>
+        <column name="disk" type="STRING" size="-1"/>
+        <column name="owner_type" type="STRING" size="-1"/>
+        <column name="image_file" type="STRING" size="-1"/>
+        <column name="uuid" type="STRING" size="-1"/>
+        <column name="certname" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+        <column name="otp" type="STRING" size="-1"/>
+        <column name="provision_method" type="STRING" size="-1"/>
+        <column name="grub_pass" type="STRING" size="-1"/>
+        <column name="lookup_value_matcher" type="STRING" size="-1"/>
+        <column name="pxe_loader" type="STRING" size="-1"/>
+    </table>
+    <table name="images">
+        <column name="uuid" type="STRING" size="-1"/>
+        <column name="username" type="STRING" size="-1"/>
+        <column name="name" type="STRING" size="-1"/>
+        <column name="iam_role" type="STRING" size="-1"/>
+        <column name="password" type="STRING" size="-1"/>
+    </table>
+    <table name="key_pairs">
+        <column name="secret" type="STRING" size="-1"/>
+        <column name="name" type="STRING" size="-1"/>
+        <column name="public" type="STRING" size="-1"/>
+    </table>
+    <table name="lookup_keys">
+        <column name="key" type="STRING" size="-1"/>
+        <column name="default_value" type="STRING" size="-1"/>
+        <column name="path" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+        <column name="validator_type" type="STRING" size="-1"/>
+        <column name="validator_rule" type="STRING" size="-1"/>
+        <column name="key_type" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+    </table>
+    <table name="lookup_values">
+        <column name="match" type="STRING" size="-1"/>
+        <column name="value" type="STRING" size="-1"/>
+    </table>
+    <table name="mail_notifications">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+        <column name="mailer" type="STRING" size="-1"/>
+        <column name="method" type="STRING" size="-1"/>
+        <column name="default_interval" type="STRING" size="-1"/>
+        <column name="subscription_type" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+    </table>
+    <table name="media">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="path" type="STRING" size="-1"/>
+        <column name="media_path" type="STRING" size="-1"/>
+        <column name="config_path" type="STRING" size="-1"/>
+        <column name="image_path" type="STRING" size="-1"/>
+        <column name="os_family" type="STRING" size="-1"/>
+    </table>
+    <table name="messages">
+        <column name="value" type="STRING" size="-1"/>
+        <column name="digest" type="STRING" size="-1"/>
+    </table>
+    <table name="models">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="info" type="STRING" size="-1"/>
+        <column name="vendor_class" type="STRING" size="-1"/>
+        <column name="hardware_model" type="STRING" size="-1"/>
+    </table>
+
+    <table name="notifications">
+        <column name="audience" type="STRING" size="-1"/>
+        <column name="subject_type" type="STRING" size="-1"/>
+        <column name="message" type="STRING" size="-1"/>
+        <column name="actions" type="STRING" size="-1"/>
+    </table>
+
+    <table name="parameters">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="value" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+    </table>
+    <table name="permissions">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="resource_type" type="STRING" size="-1"/>
+    </table>
+    <table name="puppetclasses">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="realms">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="realm_type" type="STRING" size="-1"/>
+    </table>
+    <table name="reports">
+        <column name="metrics" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+    </table>
+    <table name="roles">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+        <column name="origin" type="STRING" size="-1"/>
+    </table>
+
+    <table name="sessions">
+        <column name="session_id" type="STRING" size="-1"/>
+        <column name="data" type="STRING" size="-1"/>
+    </table>
+
+    <table name="setup_provisioners">
+        <column name="provision_interface" type="STRING" size="-1"/>
+        <column name="timestamps" type="STRING" size="-1"/>
+    </table>
+    <table name="smart_proxies">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="url" type="STRING" size="-1"/>
+        <column name="expired_logs" type="STRING" size="-1"/>
+    </table>
+    <table name="sources">
+        <column name="value" type="STRING" size="-1"/>
+        <column name="digest" type="STRING" size="-1"/>
+    </table>
+    <table name="ssh_keys">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="key" type="STRING" size="-1"/>
+        <column name="fingerprint" type="STRING" size="-1"/>
+    </table>
+
+    <table name="taxable_taxonomies">
+        <column name="taxable_type" type="STRING" size="-1"/>
+    </table>
+    <table name="taxonomies">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+        <column name="ignore_types" type="STRING" size="-1"/>
+        <column name="ancestry" type="STRING" size="-1"/>
+        <column name="title" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+    </table>
+    <table name="template_kinds">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="templates">
+        <column name="name" type="STRING" size="-1"/>
+        <column name="template" type="STRING" size="-1"/>
+        <column name="vendor" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+        <column name="os_family" type="STRING" size="-1"/>
+    </table>
+    <table name="tokens">
+        <column name="value" type="STRING" size="-1"/>
+    </table>
+    <table name="trends">
+        <column name="trendable_type" type="STRING" size="-1"/>
+        <column name="name" type="STRING" size="-1"/>
+        <column name="type" type="STRING" size="-1"/>
+        <column name="fact_value" type="STRING" size="-1"/>
+        <column name="fact_name" type="STRING" size="-1"/>
+    </table>
+    <table name="user_mail_notifications">
+        <column name="interval" type="STRING" size="-1"/>
+        <column name="mail_query" type="STRING" size="-1"/>
+    </table>
+    <table name="user_roles">
+        <column name="owner_type" type="STRING" size="-1"/>
+    </table>
+    <table name="usergroup_members">
+        <column name="member_type" type="STRING" size="-1"/>
+    </table>
+    <table name="usergroups">
+        <column name="name" type="STRING" size="-1"/>
+    </table>
+    <table name="users">
+        <column name="login" type="STRING" size="-1"/>
+        <column name="firstname" type="STRING" size="-1"/>
+        <column name="lastname" type="STRING" size="-1"/>
+        <column name="mail" type="STRING" size="-1"/>
+        <column name="password_hash" type="STRING" size="-1"/>
+        <column name="password_salt" type="STRING" size="-1"/>
+        <column name="locale" type="STRING" size="-1"/>
+        <column name="avatar_hash" type="STRING" size="-1"/>
+        <column name="lower_login" type="STRING" size="-1"/>
+        <column name="timezone" type="STRING" size="-1"/>
+        <column name="description" type="STRING" size="-1"/>
+    </table>
+    <table name="widgets">
+        <column name="template" type="STRING" size="-1"/>
+        <column name="name" type="STRING" size="-1"/>
+        <column name="data" type="STRING" size="-1"/>
+    </table>
+
+</configuration>
+
+
+
